@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    public GameObject WeaponModel;    
+    [SerializeField] private GameObject WeaponModel;    
     public abstract void Shoot();
     public void Equip(Transform hand)
     {
