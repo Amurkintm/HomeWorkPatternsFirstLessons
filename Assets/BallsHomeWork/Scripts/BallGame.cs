@@ -7,11 +7,12 @@ public enum VictorySet
 }
 public class BallGame : MonoBehaviour
 {
-    public VictorySet VictorySet;
-    public List<GameObject> RedBalls;
-    public List<GameObject> WhiteBalls;
-    public List<GameObject> GreenBalls;
-
+    [SerializeField] private List<GameObject> RedBalls;
+    [SerializeField] private List<GameObject> WhiteBalls;
+    [SerializeField] private List<GameObject> GreenBalls;
+    
+    [SerializeField] private VictorySet VictorySet;
+    
     private IVictorySet victorySet;
 
     void Start()
