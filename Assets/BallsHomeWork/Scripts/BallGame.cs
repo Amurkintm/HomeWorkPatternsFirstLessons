@@ -7,29 +7,29 @@ public enum VictorySet
 }
 public class BallGame : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> RedBalls;
-    [SerializeField] private List<GameObject> WhiteBalls;
-    [SerializeField] private List<GameObject> GreenBalls;
+    [SerializeField] private List<GameObject> _redBalls;
+    [SerializeField] private List<GameObject> _whiteBalls;
+    [SerializeField] private List<GameObject> _greenBalls;
     
-    [SerializeField] private VictorySet VictorySet;
+    [SerializeField] private VictorySet _victorySetEnum;
     
-    private IVictorySet victorySet;
+    private IVictorySet _victorySet;
 
     void Start()
     {
-        if (VictorySet == VictorySet.Все)
+        if (_victorySetEnum == VictorySet.Все)
         {
-            victorySet = new AllBallsVictory();
+            _victorySet = new AllBallsVictory();
         }
-        if (VictorySet == VictorySet.Одногоцвета)
+        if (_victorySetEnum == VictorySet.Одногоцвета)
         {
-            victorySet = new SingleColorVictory();
+            _victorySet = new SingleColorVictory();
         }
     }
 
     void Update()
     {
-        if (victorySet.CheckVictory(RedBalls, WhiteBalls, GreenBalls))
+        if (_victorySet.CheckVictory(_redBalls, _whiteBalls, _greenBalls))
         {
             Debug.Log("Вы выиграли!");
         }
@@ -37,17 +37,17 @@ public class BallGame : MonoBehaviour
 
     public void PopBall(GameObject ball)
     {
-        if (RedBalls.Contains(ball))
+        if (_redBalls.Contains(ball))
         {
-            RedBalls.Remove(ball);
+            _redBalls.Remove(ball);
         }
-        else if (WhiteBalls.Contains(ball))
+        else if (_whiteBalls.Contains(ball))
         {
-            WhiteBalls.Remove(ball);
+            _whiteBalls.Remove(ball);
         }
-        else if (GreenBalls.Contains(ball))
+        else if (_greenBalls.Contains(ball))
         {
-            GreenBalls.Remove(ball);
+            _greenBalls.Remove(ball);
         }
         Destroy(ball);
     }

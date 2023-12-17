@@ -2,12 +2,12 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    [SerializeField] private GameObject WeaponModel;    
+    [SerializeField] private GameObject _weaponModel;    
     public abstract void Shoot();
     public void Equip(Transform hand)
     {
-        WeaponModel.transform.SetParent(hand);
-        WeaponModel.transform.localPosition = Vector3.zero;
-        WeaponModel.transform.localRotation = Quaternion.identity;       
+        _weaponModel.transform.SetParent(hand);
+        _weaponModel.transform.localPosition = Vector3.zero;
+        _weaponModel.transform.localRotation = Quaternion.identity;       
     }
 }

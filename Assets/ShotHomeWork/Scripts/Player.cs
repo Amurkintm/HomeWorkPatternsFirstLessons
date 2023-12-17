@@ -2,27 +2,27 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Transform HandTransform;
-    [SerializeField] private Weapon[] Weapons;
+    [SerializeField] private Transform _handTransform;
+    [SerializeField] private Weapon[] _weapons;
     private int _currentWeaponIndex;
 
     private void Start()
     {
         _currentWeaponIndex = 0;
-        foreach (Weapon weapon in Weapons)
+        foreach (Weapon weapon in _weapons)
         {
-            weapon.Equip(HandTransform);
+            weapon.Equip(_handTransform);
             weapon.gameObject.SetActive(false);
         }
-        Weapons[_currentWeaponIndex].Equip(HandTransform);
-        Weapons[_currentWeaponIndex].gameObject.SetActive(true);
+        _weapons[_currentWeaponIndex].Equip(_handTransform);
+        _weapons[_currentWeaponIndex].gameObject.SetActive(true);
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Weapons[_currentWeaponIndex].Shoot();
+            _weapons[_currentWeaponIndex].Shoot();
         }
 
         if (Input.mouseScrollDelta.y > 0)
@@ -38,20 +38,20 @@ public class Player : MonoBehaviour
 
     private void SwitchWeaponForword()
     {
-        Weapons[_currentWeaponIndex].gameObject.SetActive(false);
-        _currentWeaponIndex = (_currentWeaponIndex + 1) % Weapons.Length;
-        Weapons[_currentWeaponIndex].Equip(HandTransform);
-        Weapons[_currentWeaponIndex].gameObject.SetActive(true);
+        _weapons[_currentWeaponIndex].gameObject.SetActive(false);
+        _currentWeaponIndex = (_currentWeaponIndex + 1) % _weapons.Length;
+        _weapons[_currentWeaponIndex].Equip(_handTransform);
+        _weapons[_currentWeaponIndex].gameObject.SetActive(true);
     }
     private void SwitchWeaponBackward()
     {
-        Weapons[_currentWeaponIndex].gameObject.SetActive(false);
+        _weapons[_currentWeaponIndex].gameObject.SetActive(false);
         _currentWeaponIndex--;
         if (_currentWeaponIndex < 0)
         {
-            _currentWeaponIndex = Weapons.Length - 1;
+            _currentWeaponIndex = _weapons.Length - 1;
         }
-        Weapons[_currentWeaponIndex].Equip(HandTransform);
-        Weapons[_currentWeaponIndex].gameObject.SetActive(true);
+        _weapons[_currentWeaponIndex].Equip(_handTransform);
+        _weapons[_currentWeaponIndex].gameObject.SetActive(true);
     }
 }

@@ -11,22 +11,22 @@ public class PlayerReputation : MonoBehaviour
 {
     [SerializeField] private Reputation _reputation;
 
-    [SerializeField] private Trader Trader;
+    [SerializeField] private Trader _trader;
 
     private void Update()
     {
 
         if (_reputation == Reputation.low)
         {
-            Trader.SetTrader(new NoTrade());
+            _trader.SetTrader(new NoTrade());
         }
         else if (_reputation == Reputation.Medium)
         {
-            Trader.SetTrader(new FruitTrade());
+            _trader.SetTrader(new FruitTrade());
         }
         else if (_reputation == Reputation.high)
         {
-            Trader.SetTrader(new ArmorTrade());
+            _trader.SetTrader(new ArmorTrade());
         }
     }
 }

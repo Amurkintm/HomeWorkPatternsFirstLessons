@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class SingleShotWeapon : Weapon
 {
-    [SerializeField] private int Ammo;
+    [SerializeField] private int _ammo;
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Transform _bulletPoints;
     public override void Shoot()
     {
-        if (Ammo > 0)
+        if (_ammo > 0)
         {
-            Ammo--;
+            _ammo--;
             CreateBullet();
-            Debug.Log("Выстрел! Осталось патронов: " + Ammo);
+            Debug.Log("Выстрел! Осталось патронов: " + _ammo);
         }
         else
         {

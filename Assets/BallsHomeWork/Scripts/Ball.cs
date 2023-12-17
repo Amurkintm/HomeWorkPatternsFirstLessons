@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    private BallGame game;
+    private BallGame _game;
 
     void Start()
     {        
-        game = FindObjectOfType<BallGame>();
+        _game = FindObjectOfType<BallGame>();
     }
 
     void OnMouseDown()
     {        
-        game.PopBall(gameObject);
+        _game.PopBall(gameObject);
     }
 }
