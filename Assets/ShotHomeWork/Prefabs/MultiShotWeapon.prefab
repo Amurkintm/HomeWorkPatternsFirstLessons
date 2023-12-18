@@ -124,7 +124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3454720646595060558
 Transform:
   m_ObjectHideFlags: 0
@@ -134,7 +134,7 @@ Transform:
   m_GameObject: {fileID: 2690540738394918906}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.55, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.14524, z: 0.10335}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -229,8 +229,8 @@ MonoBehaviour:
   _weaponModel: {fileID: 2690540738394918906}
   _bulletSpeed: 50
   _destroyBulletTimer: 2
-  _ammo: 99
   _bullet: {fileID: 6689600431983495040, guid: bd5f3ce4d1aa2624da1a2839e8633335, type: 3}
+  _ammo: 21
   _bulletPoints:
   - {fileID: 588809165933821798}
   - {fileID: 1740140881455348622}

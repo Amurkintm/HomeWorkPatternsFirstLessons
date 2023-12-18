@@ -723,6 +723,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2697174310428297432, guid: b2e22ede0ec08c847bc8c926f21bf118,
         type: 3}
+      propertyPath: _ammo
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -2697174310428297432, guid: b2e22ede0ec08c847bc8c926f21bf118,
+        type: 3}
       propertyPath: _bullet
       value: 
       objectReference: {fileID: 6689600431983495040, guid: bd5f3ce4d1aa2624da1a2839e8633335,
@@ -781,6 +786,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SingleShotWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6550309951126424900, guid: b2e22ede0ec08c847bc8c926f21bf118,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -842,6 +852,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MultiShotWeapon
       objectReference: {fileID: 0}
+    - target: {fileID: 2690540738394918906, guid: aa10c2bf4eea9014f893d3917a40b88f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3454720646595060558, guid: aa10c2bf4eea9014f893d3917a40b88f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -891,6 +906,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305972234057024163, guid: aa10c2bf4eea9014f893d3917a40b88f,
+        type: 3}
+      propertyPath: _ammo
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 6305972234057024163, guid: aa10c2bf4eea9014f893d3917a40b88f,
         type: 3}
