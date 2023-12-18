@@ -1,16 +1,17 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SingleShotWeapon : Weapon
 {
     [SerializeField] private int _ammo;
-    [SerializeField] private GameObject _bullet;
-    [SerializeField] private Transform _bulletPoints;
+    [SerializeField] private Bullet _bullet;
+    [SerializeField] private List<Transform> _bulletPoints;
     public override void Shoot()
     {
         if (_ammo > 0)
         {
             _ammo--;
-            CreateBullet();
+            CreateBullet(_bullet, _bulletPoints);
             Debug.Log("Выстрел! Осталось патронов: " + _ammo);
         }
         else
@@ -18,8 +19,8 @@ public class SingleShotWeapon : Weapon
             Debug.Log("Нет патронов!");
         }
     }
-    private void CreateBullet()
+    protected override void CreateBullet(Bullet bullet, List<Transform> transforms)
     {
-        Instantiate(_bullet, _bulletPoints.position, Quaternion.identity);
+        base.CreateBullet(bullet, transforms);
     }
 }

@@ -224,6 +224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ac7fef397c2eb4d97a8b0f193760fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponModel: {fileID: 4650398105718375832}
-  _bullet: {fileID: 2431109146792801357, guid: bd5f3ce4d1aa2624da1a2839e8633335, type: 3}
-  _bulletPoints: {fileID: 1506659866654023364}
+  _weaponModel: {fileID: 4650398105718375832}
+  _bulletSpeed: 100
+  _destroyBulletTimer: 1.5
+  _bullet: {fileID: 6689600431983495040, guid: bd5f3ce4d1aa2624da1a2839e8633335, type: 3}
+  _bulletPoints:
+  - {fileID: 1506659866654023364}

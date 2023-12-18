@@ -224,7 +224,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c9b8d33d902f494f85521af01639632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponModel: {fileID: 6550309951126424900}
-  Ammo: 100
-  _bullet: {fileID: 2431109146792801357, guid: bd5f3ce4d1aa2624da1a2839e8633335, type: 3}
-  _bulletPoints: {fileID: 4443113858874705631}
+  _weaponModel: {fileID: 6550309951126424900}
+  _bulletSpeed: 200
+  _destroyBulletTimer: 1.2
+  _ammo: 100
+  _bullet: {fileID: 6689600431983495040, guid: bd5f3ce4d1aa2624da1a2839e8633335, type: 3}
+  _bulletPoints:
+  - {fileID: 4443113858874705631}

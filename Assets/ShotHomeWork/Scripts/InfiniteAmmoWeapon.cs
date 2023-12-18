@@ -1,16 +1,17 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class InfiniteAmmoWeapon : Weapon
 {
-    [SerializeField] private GameObject _bullet;
-    [SerializeField] private Transform _bulletPoints;
+    [SerializeField] private Bullet _bullet;
+    [SerializeField] private List<Transform> _bulletPoints;    
     public override void Shoot()
     {
-        CreateBullet();
+        CreateBullet(_bullet, _bulletPoints);        
         Debug.Log("Выстрел! Патроны бесконечны.");
     }
-    private void CreateBullet()
-    {        
-        Instantiate(_bullet, _bulletPoints.position, Quaternion.identity);        
+    protected override void CreateBullet(Bullet bullet, List<Transform> transforms)
+    {
+        base.CreateBullet(bullet, transforms);
     }
 }
