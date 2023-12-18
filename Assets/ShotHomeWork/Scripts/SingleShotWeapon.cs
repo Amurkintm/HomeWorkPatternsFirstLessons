@@ -3,15 +3,14 @@ using UnityEngine;
 
 public class SingleShotWeapon : Weapon
 {
-    [SerializeField] private int _ammo;
-    [SerializeField] private Bullet _bullet;
+    [SerializeField] private int _ammo;    
     [SerializeField] private List<Transform> _bulletPoints;
     public override void Shoot()
     {
         if (_ammo > 0)
         {
             _ammo--;
-            CreateBullet(_bullet, _bulletPoints);
+            CreateBullet(_bulletPoints);
             Debug.Log("Выстрел! Осталось патронов: " + _ammo);
         }
         else
@@ -19,8 +18,8 @@ public class SingleShotWeapon : Weapon
             Debug.Log("Нет патронов!");
         }
     }
-    protected override void CreateBullet(Bullet bullet, List<Transform> transforms)
+    protected override void CreateBullet(List<Transform> transforms)
     {
-        base.CreateBullet(bullet, transforms);
+        base.CreateBullet(transforms);
     }
 }

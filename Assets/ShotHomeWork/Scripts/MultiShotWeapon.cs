@@ -3,15 +3,14 @@ using UnityEngine;
 
 public class MultiShotWeapon : Weapon
 {
-    [SerializeField] private int _ammo;
-    [SerializeField] private Bullet _bullet;
+    [SerializeField] private int _ammo;    
     [SerializeField] private List<Transform> _bulletPoints;
     public override void Shoot()
     {
         if (_ammo >= 3)
         {
             _ammo -= 3;
-            CreateBullet(_bullet, _bulletPoints);
+            CreateBullet(_bulletPoints);
             Debug.Log("Три выстрела! Осталось патронов: " + _ammo);
         }
         else
@@ -19,8 +18,8 @@ public class MultiShotWeapon : Weapon
             Debug.Log("Недостаточно патронов для мультивыстрела!");
         }
     }
-    protected override void CreateBullet(Bullet bullet, List<Transform> transforms)
+    protected override void CreateBullet(List<Transform> transforms)
     {
-        base.CreateBullet(bullet, transforms);
+        base.CreateBullet(transforms);
     }
 }
